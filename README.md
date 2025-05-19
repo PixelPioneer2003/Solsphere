@@ -43,9 +43,9 @@ cross-platform-system-monitoring/
 
 ---
 
-## 🧾 Mongoose Model
 
 ```js
+## 🧾 Mongoose Model
 const machineSchema = new mongoose.Schema({
   machineId: { type: String, required: true },
   osVersion: { type: String, required: true }, // e.g., "10.0.26100"
