@@ -69,3 +69,31 @@ exports.exportCSV = async (req, res) => {
     res.status(500).json({ error: "CSV export failed" });
   }
 };
+
+exports.getMachineById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const machine = await Machine.findById(id);
+    if (!machine) {
+      return res.status(404).json({ error: "Machine not found" });
+    }
+    res.json(machine);
+  } catch (error) {
+    console.error("Error fetching machine by ID:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+exports.getMachineByMachineId = async (req, res) => {
+  try {
+    const { machineId } = req.params;
+    const machine = await Machine.findOne({ machineId });
+    if (!machine) {
+      return res.status(404).json({ error: "Machine not found" });
+    }
+    res.json(machine);
+  } catch (error) {
+    console.error("Error fetching machine by machineId:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
