@@ -44,7 +44,7 @@ It is a full-stack platform to monitor, collect, and visualize system health met
 
 ## 🧾 Mongoose Model (machineSchema)
 
-```js
+
 const machineSchema = new mongoose.Schema({
   machineId: { type: String, required: true },
   osVersion: { type: String, required: true }, // e.g., "10.0.26100"
